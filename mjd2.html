@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>Document</title>
+	<link rel="stylesheet" href="css/reset2.css">
+	<link rel="stylesheet" href="dist/css/swiper.min.css">
+	<!--<link rel="stylesheet" href="path/to/animate.min.css">-->
+    <style>
+	    body{
+	    	/*max-width: 640px;*/
+	    	max-width: 1200px;
+	    	min-width: 300px;
+	    	height: 640px;
+	    	position: relative;
+	    	background-color: #f3f3f3;
+	    }
+	    #search1s{
+	    	width: 82%;
+	    	height: 27px;
+	    	position: absolute;
+	    	margin-top: 7px;
+	    	margin-left: 5%;
+	    	border-radius:4px;
+	    	background-color: rgba(256,256,256,0.3);
+	    }
+	    #search1{
+	    	z-index: 10;
+	    	width: 100%;
+	    	height: 27px;
+	    	position: absolute;
+	    	margin-top: 7px;
+	    	margin-left: 5%;
+	    	overflow: hidden;
+	    	border-radius:4px;
+	    }
+	    #header input{
+	    	height: 27px;
+	    	width: 60%;
+	    	font-size: 12px;
+	    	
+	    	line-height: 27px;
+	    	background-color:transparent;
+	    	border: none;
+	    	outline: none;
+	    	float: left;
+	    }
+	    ::-webkit-input-placeholder{
+	    	color: white;
+	    }
+	    .search1L{
+	    	float: left;
+	    	font-size: 16px;
+	    	color: white;
+	    	line-height: 27px;
+	    	width: 30px;
+	    	text-align: center;
+	    }
+	    .search1R{
+		    	float: right;
+		    	width: 12px;
+		    	height: 12px;
+		    	margin-top: 7px;
+		    	margin-right: 20%;
+	    }
+	    .search1R img{
+	    	width: 12px;
+	    }
+	    #header a{
+	    	display: inline-block;
+	    	width: 10%;
+	    	height:34px ;
+	    	line-height: 34px;
+	    	/*margin-left: 7px;*/
+	    	position: absolute;
+	    left: 90%;
+	    	top: 2px;
+	    	color: white;
+	    	font-size: 13px;
+	    	font-weight: bold;
+	    }
+	    /*轮播图*/
+	   .swiper-container1 {
+	        width: 100%;
+	        /*height: 161px;*/
+	    }
+	    .swiper-container1 .swiper-slide {
+	    	    width: 100%;
+	    	    max-height:286px ;
+	        text-align: center;
+	        font-size: 18px;
+	        background: #fff;
+	
+	        /*Center slide text vertically 
+	        display: -webkit-box;
+	        display: -ms-flexbox;
+	        display: -webkit-flex;*/
+	        /*display: flex;*/
+	        /*-webkit-box-pack: center;
+	        -ms-flex-pack: center;
+	        -webkit-justify-content: center;
+	        justify-content: center;
+	        -webkit-box-align: center;
+	        -ms-flex-align: center;
+	        -webkit-align-items: center;
+	        align-items: center;*/
+	    }
+	   .swiper-container1 .swiper-pagination-bullet{
+	   	    width: 4px;
+	   	    height: 4px;
+	   	    border-radius: 50%;
+	   	    border: 1px solid white;
+	   	    background-color: transparent;
+	   	    opacity: 1;
+	   	    
+	   }
+	   .swiper-container1 .swiper-pagination-bullet-active{
+	   	    background-color: white;
+	   }
+	   #lunbo{
+	   	    width: 100%;
+	   	    position: relative;
+	   	    /*left: 0;
+	   	    top: 0;*/
+	   	    overflow: hidden;
+	   }
+	    #lunbo img{
+	    		width: 100%;
+	   }
+	   /*目录*/
+	  #mulu{
+	  	    width: 100%;
+	  	    overflow: hidden;
+	  }
+	  #mulu ul li{
+	  	    width: 20%;
+	  	    height: 100%;
+	  	    margin: 10px 0 10px;
+	  	    float: left;
+	  }
+	  #mulu ul li img{
+	  	width:60%;
+	  	margin-left: 20%;
+	  }
+	   #mulu ul span{
+	   	display: inline-block;
+	   	width:100% ;
+	   	height: 12px;
+	   	line-height: 12px;
+	   	text-align: center;
+	   }
+	   /*快报*/
+	  #faster{
+	  	width: 96%;
+	  	height: 30px;
+	  	margin:0 2% 10px 2%;
+	  	background-color: white;
+	  	border-radius: 5px;
+	  }
+	  #faster a{
+	  	text-decoration: none;
+	  }
+	  .faster1 img{
+	  	width: 73px;
+	  	height: 16px;
+	  	margin-top: 7px;
+	  	margin-left: 3px;
+	  	float: left;
+	  }
+	  .faster2{
+	  	width: 61%;
+	  	height: 30px;
+	  	float: left;
+	  	overflow: hidden;
+	  }
+	  #faster22{
+	  	width: 100%;
+	  	/*height: 30px;*/
+	  	position: relative;
+	  	top: 0;
+	  	left: 0;
+	  }
+	  /*小轮播*/
+	 .faster2 ul li{
+	 	text-align: left;
+        height: 30px;
+        line-height: 30px;
+        font-size: 18px;
+        background: #fff;
+ 
+	 }
+	 .faster2 ul li a{
+	  	font-size: 12px;
+	  	display: inline-block;
+	  	width: 100%;
+	  	color: dimgrey;
+	  	overflow: hidden;
+	  	text-overflow: ellipsis;
+	  	white-space: nowrap;
+	  	text-decoration: none;
+	  }
+	  .faster2 ul li a span{
+	  	font-size: 14px;
+	  	color: red;
+	  }
+	  .faster3{
+	  	width: 30px;
+	  	height: 18px;
+	  	line-height: 18px;
+	  	margin-top: 6px;
+	  	padding-left: 5px;
+	  	float: right;
+	  	border-left: 1px solid #999;
+	  }
+	   .faster3 a{
+	   	color: black;
+	   }
+	   /*秒杀*/
+	  #miaosha{
+	  	width: 100%;
+	  	height: 34px;
+	  	background-color: white;
+	  	position: relative;
+	  }
+	  .jdmiaosha{
+	  	width: 69px;
+	  	height: 27px;
+	  	position: absolute;
+	  	top: 0;
+	  	left: 0;
+	  }
+	  .jdmiaosha img{
+	  	width: 69px;
+	  	margin-top: 3px;;
+	  }
+	  .miao1{
+	  	margin-left: 3px;
+	  	width: 42px;
+	  	height: 34px;
+	  	position: absolute;
+	  	top: 0;
+	  	left: 70px;
+	  	line-height: 34px;
+	  	font-size: 13px;
+	  }
+	  #hours{
+	  	width: 17px;
+	  	height: 15px;
+	  	border: 1px solid #999;
+	  	position: absolute;
+	  	top: 7px;
+	  	left: 130px;
+	  	font-size: 12px;
+	  	line-height: 15px;
+	  	text-align: center;
+	  }
+	  .miao21{
+	  	position: absolute;
+	  	top: 0;
+	  	left: 150px;
+	  	width: 13px;
+	  	height: 34px;
+	  	line-height: 34px;
+	  	font-size: 13px;
+	  }
+	   .miao22{
+	  	position: absolute;
+	  	top: 0;
+	  	left: 180px;
+	  	width: 13px;
+	  	height: 34px;
+	  	line-height: 34px;
+	  	font-size: 13px;
+	  }
+	  #mins{
+	  	width: 17px;
+	  	height: 15px;
+	  	border: 1px solid #999;
+	  	position: absolute;
+	  	top: 7px;
+	  	left: 160px;
+	  	font-size: 12px;
+	  	line-height: 15px;
+	  	text-align: center;
+	  }
+	  #secs{
+	  	width: 17px;
+	  	height: 15px;
+	  	border: 1px solid #999;
+	  	position: absolute;
+	  	top: 7px;
+	  	left: 190px;
+	  	font-size: 12px;
+	  	line-height: 15px;
+	  	text-align: center;
+	  }
+	  .miao31{
+	  	margin-left: 3px;
+	  	width: 42px;
+	  	height: 34px;
+	  	position: absolute;
+	  	top: 0;
+	  	left: 215px;
+	  	line-height: 34px;
+	  	font-size: 13px;
+	  	color: #595959;
+	  }
+	  .miao32{
+	  	margin-left: 3px;
+	  	width: 42px;
+	  	height: 34px;
+	  	position: absolute;
+	  	top: 0;
+	  	left: 260px;
+	  	line-height: 34px;
+	  	font-size: 13px;
+	  	color: #595959;
+	  }
+	  .miao4{
+	  	width: 54px;
+	  	height: 34px;
+	  	position: absolute;
+	  	right: 0;
+	  	top: 0;
+	  	cursor: pointer;
+	  }
+	  .miao5{
+	  	width: 40px;
+	  	height: 34px;
+	  	line-height: 34px;
+	  	font-size: 14px;
+	  	color: red;
+	  }
+	  .miao4 img{
+	  	height: 15px;
+	  	width: 15px;
+	  	border-radius: 50%;
+	  	background-color: red;
+	  	margin-top: 7px;
+	  }
+	  /*又是轮播图*/
+	 #lunbo3{
+	 	width: 100%;
+	 }
+	 .swiper-container3 {
+	        width: 100%;
+	        /*height: 161px;*/
+    }
+    .swiper-container3 .swiper-slide div{
+    	    position: relative;
+       	border-left: 1px solid darkgray;
+    	    width: 100%;
+    	    max-height:286px ;
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /*Center slide text vertically*/  
+        /*flex布局*/
+        /*display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;*/
+        /*display: flex;*/
+        /*-webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;*/
+    }
+    .swiper-container3 .swiper-slide div div{
+    	    width: 100%;
+    }
+    .swiper-container3 .swiper-slide p{
+    	    width: 100%;
+    	    text-align: center;
+    	    color: red;
+    	    font-size: 16px;
+    	    background-color: white;
+    }
+    .swiper-container3 .swiper-slide span{
+      	display: inline-block;
+    	    width: 100%;
+    	    text-align: center;
+    	    color: #999;
+    	    text-decoration: line-through;
+    	    background-color: white;
+    }
+    .swiper-container3 .swiper-slide:nth-child(1) div span{
+      	position: absolute;
+      	left: 5%;
+      	bottom: 0;;
+    	    font-size: 12px;
+    	    font-weight: bold;
+      	display: inline-block;
+    	    width: 40px;
+    	    height: 14px;
+    	    line-height: 14px;
+    	    text-align: center;
+    	    color: white;
+    	    background-color: blueviolet;
+    	    text-decoration: none;
+    }
+    .swiper-container3 .swiper-slide:nth-child(2) div span{
+      	position: absolute;
+      	left: 5%;
+      	bottom: 0;;
+    	    font-size: 12px;
+    	    font-weight: bold;
+      	display: inline-block;
+    	    width: 40px;
+    	    height: 14px;
+    	    line-height: 14px;
+    	    text-align: center;
+    	    color: white;
+    	    background-color: orange;
+    	    text-decoration: none;
+    }
+    .swiper-container3 .swiper-slide:nth-child(3) div span{
+      	position: absolute;
+      	left: 5%;
+      	bottom: 0;;
+    	    font-size: 12px;
+    	    font-weight: bold;
+      	display: inline-block;
+    	    width: 40px;
+    	    height: 14px;
+    	    line-height: 14px;
+    	    text-align: center;
+    	    color: white;
+    	    background-color: deepskyblue;
+    	    text-decoration: none;
+    }
+     #lunbo3 .swiper-container3 .swiper-slide:first-child div{
+    	    border-left: none;
+    }
+    #lunbo3 .swiper-container3 .swiper-slide:last-child img{
+        width: 15px;
+        background-color: white;
+        border-radius: 50%;
+    }
+    #lunbo3 .swiper-container3 .swiper-slide:last-child div{
+        width: 18px;
+        height: 90px;
+        display: inline-block;
+        background-color: #9C9C9C;
+        position: absolute;
+        left: 20%;
+    }
+     #lunbo3 .swiper-container3 .swiper-slide:last-child span{
+        width: 15px;
+        height: 60px;
+        line-height: 15px;
+        display: inline-block;
+        font-size: 12px;
+        text-decoration: none;
+        color: white;
+        background-color: #9C9C9C;
+    }
+    #lunbo3 .swiper-container3 .swiper-slide{
+        background-color: white;
+    }
+    #lunbo3 .swiper-container3 .swiper-slide:last-child{
+        background-color: white;
+        display: inline-block;
+        height: auto;
+    }
+	 /*又是轮播图3*/
+	#lunbo3 img{
+		width: 90%;
+		margin-left: 2px;
+	}
+	/*卡车*/
+	#kache{
+		width: 100%;
+		border-top: 3px solid gainsboro;
+	}
+	#kache img{
+		width: 100%;
+	}
+	/*头部弹出广告*/
+	#header{
+	    	width: 100%;
+	    	height: 34px;
+	    	position: fixed;
+	    	top: 50px;
+	    	left: 0;
+	    	z-index: 9999999;   	
+	    	max-width: 640px;
+	    	min-width: 300px;
+	    }
+	#guanggao{
+		width: 100%;
+		height: 50px;
+		background-color: black;
+		position: relative;
+		display: block;
+	}
+	#btnoff{
+		width: 16px;
+		height: 16px;
+		display: inline-block;
+		position: absolute;
+		top: 16px;
+		left: 10px;
+	}
+	#btnoff img{
+		width: 16px;
+	}
+	.pic1{
+		width: 35px;
+		position: absolute;
+		left: 40px;
+		top: 7px;
+	}
+	.gsdiv{
+		width: 144px;
+		height: 50px;
+		position: absolute;
+		left: 80px;
+	}
+	.gspan1{
+		color: white;
+		display: inline-block;
+		width: 144px;
+		height: 20px;
+		line-height: 20px;
+		font-size: 13px;
+		margin-top: 5px;
+	}
+	.gspan2{
+		color: lightgrey;
+		display: inline-block;
+		width: 144px;
+		height: 20px;
+		line-height: 20px;
+		font-size: 13px;
+		
+	}
+	#btnenter{
+		width: 30%;
+		height: 50px;
+		float: right;
+		background-color: red;
+		font-size: 16px;
+		color: white;
+		text-align: center;
+		line-height: 50px;
+	}
+	/*dock*/
+	#footer{
+		width: 100%;
+		height: 50px;
+		background-color: white;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		z-index: 9999999;
+		min-width: 300px;
+	}
+	#footer ul li{
+		width: 20%;
+		height: 50px;
+		float: left;
+	}
+	#footer ul li img{
+		height: 50px;
+	}
+	
+    </style>
+</head>
+
+<body>
+    	<div id="guanggao">
+	<a id="btnoff" href="###"><img src="img/关闭.png" alt="" /></a>
+	<img class="pic1" src="img/newman.png" alt="" />
+	<div class="gsdiv"><span class="gspan1" >打开京东App购物</span><span class="gspan2">新人领188元红包</span></div>
+	<a id="btnenter" href="###">立即打开</a>
+    </div>
+	<div id="header">
+		<div id="search1s"></div>
+		<div id="search1">
+			<div class="search1L">
+				 JD
+			</div>
+			<input type="text" placeholder="搜索京东商品/店铺">
+			<div class="search1R">
+				<img src="img/JD/搜索.png" alt="">
+			</div>           
+		</div>
+		<a href="###">登录</a>
+			
+	</div>
+	<div id="footer">
+		<ul>
+			<li><img src="img/首页.png" alt="" /></li>
+			<li><img src="img/分类.png" alt="" /></li>
+			<li><img src="img/发现.png" alt="" /></li>
+			<li><img src="img/购物车.png" alt="" /></li>
+			<li><img src="img/我的.png" alt="" /></li>
+		</ul>
+	</div>
+	
+	<!--轮播图-->
+	<div id="lunbo">
+
+	<div class="swiper-container swiper-container1">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="img/1.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="img/2.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="img/3.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="img/4.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="img/5.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="img/6.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="img/7.jpg" alt="" /></div>
+            <div class="swiper-slide"><img src="img/8.jpg" alt="" /></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+    		
+	</div>
+	<!--目录-->
+	<div id="mulu">
+		<ul>
+			<li><img src="img/11.png" alt="" /><span>京东超市</span></li>
+			<li><img src="img/12.png" alt="" /><span>全球购</span></li>
+			<li><img src="img/13.png" alt="" /><span>服装城</span></li>
+			<li><img src="img/14.png" alt="" /><span>京东生鲜</span></li>
+			<li><img src="img/10.png" alt="" /><span>京东到家</span></li>
+			<li><img src="img/15.png" alt="" /><span>充值中心</span></li>
+			<li><img src="img/16.png" alt="" /><span>惠赚钱</span></li>
+			<li><img src="img/17.png" alt="" /><span>领券</span></li>
+			<li><img src="img/18.png" alt="" /><span>物流查询</span></li>
+			<li><img src="img/19.png" alt="" /><span>领京豆</span></li>
+
+		</ul>
+	</div>
+	<!--快报-->
+	<div id="faster">
+		<div class="faster1"><img src="img/快报.png" alt="" /></div>
+		<div class="faster2">
+			<div id="faster22">
+	<!-- Swiper2 -->
+        <!--<div class="swiper-container">
+		        <div class="swiper-wrapper">
+		            <div class="swiper-slide"><a href="###">旅游拍照没单反？高像素手机帮你忙</a></div>
+		            <div class="swiper-slide"><a href="###">开机超过10秒算我输！固态硬盘轻薄推荐</a></div>
+		            <div class="swiper-slide"><a href="###"><span>爆</span>1999元抢i5游戏本</a></div>
+		        </div>
+        </div>-->
+			<ul>
+			    <li><a href="###">旅游拍照没单反？高像素手机帮你忙</a></li>
+			    <li><a href="###">开机超过10秒算我输！固态硬盘轻薄推荐</a></li>
+			    <li><a href="###"><span>爆</span>1999元抢i5游戏本</a></li>
+			    <li><a href="###">旅游拍照没单反？高像素手机帮你忙</a></li>
+			</ul>
+			</div>
+		</div>
+		<div class="faster3"><a href="###">更多</a></div>
+	</div>
+	<!--秒杀-->
+	<div id="miaosha">
+		<div class="jdmiaosha"><img src="img/jd秒杀.png" alt="" /></div>
+		<span class="miao1">18点场</span>
+		<div id="hours"></div>
+		<span class="miao21">:</span>
+		<div id="mins"></div>
+		<span class="miao22">:</span>
+		<div id="secs"></div>
+		<span class="miao31">20点场</span>
+		<span class="miao32">22点场</span>
+		<div class="miao4">
+		<span class="miao5">更多</span>
+		<img src="img/JD/圆右.png" alt="" />
+		</div>
+	</div>
+	<!--又是轮播图-->
+	<div id="lunbo3">
+		 <!-- Swiper -->
+        <div class="swiper-container swiper-container3">
+	        <div class="swiper-wrapper">
+            <div class="swiper-slide">  <div><span>囤货</span><img src="img/k1.jpg" alt="" /></div><p>￥79.8</p><span>￥119.9</span></div>
+            <div class="swiper-slide">	<div><span>经典</span><img src="img/k2.jpg" alt="" /></div><p>￥79.8</p><span>￥119.9</span></div>
+            <div class="swiper-slide">	<div><span>玩家</span><img src="img/k3.jpg" alt="" /></div><p>￥79.8</p><span>￥119.9</span></div>
+            <div class="swiper-slide">	<div><img src="img/k4.jpg" alt="" /></div><p>￥79.8</p><span>￥119.9</span></div>
+            <div class="swiper-slide">	<div><img src="img/k5.jpg" alt="" /></div><p>￥79.8</p><span>￥119.9</span></div>
+            <div class="swiper-slide">	<div><img src="img/k6.jpg" alt="" /></div><p>￥79.8</p><span>￥119.9</span></div>
+            <div class="swiper-slide">	<div><img src="img/k7.jpg" alt="" /></div><p>￥79.8</p><span>￥119.9</span></div>
+            <div class="swiper-slide">	<div><img src="img/k8.jpg" alt="" /></div><p>￥79.8</p><span>￥119.9</span></div>
+            <div class="swiper-slide">	<div><img src="img/k9.jpg" alt="" /></div><p>￥79.8</p><span>￥119.9</span></div>
+            <div class="swiper-slide">	<div><img src="img/k10.jpg" alt="" /></div><p>￥79.8</p><span>￥119.9</span></div>
+            <div class="swiper-slide">	<div><img src="img/k11.jpg" alt="" /></div><p>￥79.8</p><span>￥119.9</span></div>
+            <div class="swiper-slide">	<div><img src="img/k12.jpg" alt="" /></div><p>￥79.8</p><span>￥119.9</span></div>
+            <div id="chakan" class="swiper-slide">  <div><img src="img/返回 .png" alt="" /><span>查看全部</span></div></div>
+            </div>
+        </div>
+	</div>
+	<!--卡车-->
+	<div id="kache">
+		<img src="img/卡车.jpg" alt="" />
+	</div>
+	<script type="text/javascript">
+	   //头部广告
+	   var guanggao=document.getElementById("guanggao")
+	   var btnoff=document.getElementById("btnoff")
+	   var header=document.getElementById("header")
+	   var body=document.getElementsByTagName("body")[0]
+	   btnoff.onclick=function(){
+	   	    guanggao.style.display="none"
+	   	    header.style.top=0
+	   }
+	   var box = document.getElementById("box");
+		
+		
+		body.addEventListener("touchstart",function (){
+			body.addEventListener("touchmove",function(){
+				guanggao.style.display="none"
+	   	        header.style.top=0	
+			},false)	
+		},false)
+	   
+	   //京东快报
+		var faster22=document.getElementById("faster22");
+		var Faslis=faster22.getElementsByTagName("li");
+		faster22.style.height=Faslis[0].offsetHeight*Faslis.length+"px";
+		var speed=30;
+		var index=0;
+		var timeFast=null;
+		timeFast=setInterval(function(){
+			index++;
+
+			//无限循环
+			faster22.style.top=-index*30+"px";
+			faster22.style.transition="all 1s";
+			//不能调换循序
+			if(index>3){	
+				faster22.style.top=0;
+				index=0;
+				faster22.style.transition="none";
+			}
+		},1000)
+		
+		//时间
+		var hour=document.getElementById("hours")
+		var min=document.getElementById("mins")
+		var sec=document.getElementById("secs")
+		
+		   function a(){
+		   var nowDate =new Date();
+	    	   var nowDateMin=nowDate.getTime();
+	    	   var endDate=new Date("2017/6/15");
+	    	   var endDateMin=endDate.getTime();
+	    	   var tim=endDateMin-nowDateMin;
+	
+	    	   var hours=Math.floor(tim/1000/60/60%24);
+	    	   var mins=Math.floor(tim/1000/60%60);
+	    	   var secs=Math.floor(tim/1000%60);
+	   
+	           hour.innerHTML=bl(hours);
+	           min.innerHTML=bl(mins);
+	           sec.innerHTML=bl(secs);
+			}
+		    function bl(num){
+		           return num<10?"0"+num:num;
+		    }
+	         
+	    	   var timermiaosha=setInterval(function(){
+	    	        a();
+	       },1000)
+	</script>
+	<script src="dist/js/swiper.min.js"></script>
+	<!--<script src="path/to/swiper.animate.min.js"></script>-->
+	<script>
+		var swiper1 = new Swiper('.swiper-container1', {
+			//显示小点
+	        pagination: '.swiper-pagination',
+	        //点击小点
+	        paginationClickable: true,
+	        //循环
+	        loop:true,
+	        //自动播放
+	        autoplay:2000,
+	        //滑动后还能自动播放
+	        autoplayDisableOnInteraction: false,
+        });   
+	</script>
+	<script>
+		var swiper3 = new Swiper('.swiper-container3', {
+			
+	        slidesPerView : 3.5,
+        });   
+	</script>
+
+</body>
+</html>
